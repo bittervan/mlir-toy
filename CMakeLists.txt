@@ -18,7 +18,29 @@ include(HandleLLVMOptions)
 include_directories(${LLVM_INCLUDE_DIRS} ${MLIR_INCLUDE_DIRS})
 include_directories(include)
 
-add_executable(mlir-toy main.cpp)
+# Collect main source files
+set(MAIN_SOURCES
+    main.cpp
+)
+
+# Collect parser source files
+file(GLOB PARSER_SOURCES
+    "parser/*.cpp"
+)
+
+# Collect mlir source files
+file(GLOB MLIR_SOURCES
+    "mlir/*.cpp"
+)
+
+# Combine all sources
+set(ALL_SOURCES
+    ${MAIN_SOURCES}
+    ${PARSER_SOURCES}
+    ${MLIR_SOURCES}
+)
+
+add_executable(mlir-toy ${ALL_SOURCES})
 
 target_link_libraries(
     mlir-toy

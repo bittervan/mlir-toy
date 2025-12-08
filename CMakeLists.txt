@@ -16,6 +16,7 @@ include(AddMLIR)
 include(HandleLLVMOptions)
 
 include_directories(${LLVM_INCLUDE_DIRS} ${MLIR_INCLUDE_DIRS})
+include_directories(include)
 
 add_executable(mlir-toy main.cpp)
 

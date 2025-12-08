@@ -1,5 +1,6 @@
 #include <mlir/IR/AsmState.h>
 #include <mlir/IR/BuiltinOps.h>
+#include <mlir/IR/OperationSupport.h>
 #include <mlir/IR/ValueRange.h>
 #include <mlir/Parser/Parser.h>
 #include <mlir/IR/MLIRContext.h>
@@ -32,6 +33,8 @@ int main(int argc, char **argv) {
 
     builder.create<func::ReturnOp>(builder.getUnknownLoc(), ValueRange({addi}));
 
-    mod->print(llvm::outs());
+    mlir::OpPrintingFlags flags;
+    flags.printGenericOpForm();
+    mod->print(llvm::outs(), flags);
     return 0;
 }

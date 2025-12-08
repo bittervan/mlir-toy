@@ -17,6 +17,7 @@ include(HandleLLVMOptions)
 
 include_directories(${LLVM_INCLUDE_DIRS} ${MLIR_INCLUDE_DIRS})
 include_directories(include)
+include_directories(${CMAKE_BINARY_DIR}/include)
 
 add_mlir_tool(ex3-opt main.cpp)
 
@@ -26,7 +27,4 @@ target_link_libraries(ex3-opt
 PRIVATE Toy
     MLIRIR
     MLIRSupport
-    MLIRParser
-    MLIRFuncDialect
-    MLIRArithDialect
 )

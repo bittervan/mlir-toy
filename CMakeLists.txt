@@ -28,3 +28,6 @@ PRIVATE Toy
     MLIRIR
     MLIRSupport
 )
+
+# Set ex3-opt as the default build target
+add_custom_target(default ALL DEPENDS ex3-opt)

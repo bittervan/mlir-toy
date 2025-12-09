@@ -1,5 +1,6 @@
 include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
+include "toy/ToyDialect.td"
 
 class ToyOp<string mnemonic, list<Trait> traits = []> :
     Op<ToyDialect, mnemonic, traits>;

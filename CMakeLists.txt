@@ -26,7 +26,11 @@ add_subdirectory(lib)
 target_link_libraries(ex3-opt
 PRIVATE Toy
     MLIRIR
+    Toy
     MLIRSupport
+    MLIROptLib
+    MLIRFuncDialect
+    MLIRTransforms
 )
 
 # Set ex3-opt as the default build target
